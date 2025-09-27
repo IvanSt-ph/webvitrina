@@ -59,7 +59,10 @@
         <div class="bg-white rounded-xl border p-3 flex flex-col shadow-sm hover:shadow-md transition">
           <a href="{{ route('product.show',$p) }}" class="aspect-square bg-gray-100 rounded mb-2 overflow-hidden">
             @if($p->image)
-              <img src="{{ asset('storage/'.$p->image) }}" class="w-full h-full object-cover"/>
+              <img src="{{ asset('storage/products/' . $p->image) }}" class="w-full h-full object-cover"/>
+              <img src="{{ $p->image_url }}" class="w-full h-full object-cover"/>
+
+
             @endif
           </a>
           <div class="font-medium line-clamp-2">{{ $p->title }}</div>
