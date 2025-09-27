@@ -85,4 +85,10 @@ class Product extends Model
             }
         });
     }
+
+    public function getImageUrlAttribute()
+{
+    return asset('storage/products/' . $this->image);
+}
+
 }
