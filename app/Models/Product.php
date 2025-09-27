@@ -86,9 +86,13 @@ class Product extends Model
         });
     }
 
-    public function getImageUrlAttribute()
+public function getImageUrlAttribute()
 {
-    return asset('storage/products/' . $this->image);
+    return $this->image 
+        ? asset('storage/' . $this->image) 
+        : asset('images/no-image.png');
 }
+
+
 
 }

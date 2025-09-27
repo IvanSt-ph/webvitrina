@@ -57,14 +57,12 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"> <!-- увеличил gap -->
       @foreach($products as $p)
         <div class="bg-white rounded-xl border p-3 flex flex-col shadow-sm hover:shadow-md transition">
-          <a href="{{ route('product.show',$p) }}" class="aspect-square bg-gray-100 rounded mb-2 overflow-hidden">
-            @if($p->image)
-              <img src="{{ asset('storage/products/' . $p->image) }}" class="w-full h-full object-cover"/>
-              <img src="{{ $p->image_url }}" class="w-full h-full object-cover"/>
+<a href="{{ route('product.show',$p) }}" class="aspect-square bg-gray-100 rounded mb-2 overflow-hidden">
+  @if($p->image)
+    <img src="{{ $p->image_url }}" class="w-full h-full object-cover"/>
+  @endif
+</a>
 
-
-            @endif
-          </a>
           <div class="font-medium line-clamp-2">{{ $p->title }}</div>
           <div class="mt-auto flex items-center justify-between">
             <div class="text-lg font-bold">
