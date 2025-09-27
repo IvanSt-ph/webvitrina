@@ -88,10 +88,11 @@ class Product extends Model
 
 public function getImageUrlAttribute()
 {
-    return $this->image 
-        ? asset('storage/' . $this->image) 
+    return $this->image
+        ? asset('storage/' . ltrim($this->image, '/'))
         : asset('images/no-image.png');
 }
+
 
 
 
